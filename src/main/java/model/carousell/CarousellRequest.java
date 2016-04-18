@@ -39,8 +39,12 @@ public class CarousellRequest extends CommonRequest implements CarousellContstan
 		housing,
 	}
 	
+	public enum api {
+		default_api
+	};
+	
+	String url;
 	String path;
-	String url = CAROUSELL_LINK;
 	String query;
 	
 	public static class CarousellRequestBuilder {
@@ -54,5 +58,14 @@ public class CarousellRequest extends CommonRequest implements CarousellContstan
 			}
 			return this;
 		}
+		
+		@Tolerate
+		public CarousellRequestBuilder api(api api) {
+			if(api.equals(CarousellRequest.api.default_api)) {
+				url = CAROUSELL_LINK;
+			}
+			return this;
+		}
+		
 	}
 }

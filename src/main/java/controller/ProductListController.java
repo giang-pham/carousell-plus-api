@@ -33,6 +33,7 @@ public class ProductListController {
 				.searchStr(searchStr)
 				.build();
 		CarousellRequest request = CarousellRequest.builder()
+				.api(CarousellRequest.api.default_api)
 				.path(CarousellRequest.category.books)
 				.query(query.toJson())
 				.build();
