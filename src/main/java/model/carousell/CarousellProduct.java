@@ -11,6 +11,7 @@ import model.Product;
 @Data
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class CarousellProduct extends Product {
+	private String id;
 	private String description;
 	private String title;
 	private BigDecimal price;
