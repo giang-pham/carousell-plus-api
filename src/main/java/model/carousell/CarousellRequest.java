@@ -4,9 +4,10 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.experimental.Tolerate;
 import model.CommonRequest;
+import validator.CheckIn;
 @Builder 
 @Data
-public class CarousellRequest extends CommonRequest implements CarousellContstant{
+public class CarousellRequest extends CommonRequest implements CarousellConstant{
 	
 	public enum category {
 		general,
@@ -44,6 +45,8 @@ public class CarousellRequest extends CommonRequest implements CarousellContstan
 	};
 	
 	String url;
+	
+	@CheckIn(value=CarousellConstant.constantList.category)
 	String path;
 	String query;
 	
