@@ -14,6 +14,8 @@ public class CarousellProduct extends Product {
 	private String id;
 	private String description;
 	private String title;
+	@JsonProperty("likes_count")
+	private int likeCount;
 	private BigDecimal price;
 	@JsonProperty("primary_photo_url")
 	private String primaryPhotoUrl;
